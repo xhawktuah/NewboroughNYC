@@ -11,12 +11,12 @@ const CONFIG = {
     
     // Music Player
     musicUrl: "src/music.mp3", // Replace with your music file path
-    songTitle: "NewBoroughs NYC Theme",
-    autoplay: false, // Set to true for autoplay
-    loop: false, // Set to true for autoplay loop
+    songTitle: "NewBoroughs NYC",
+    autoplay: true, // Set to true for autoplay
+    loop: true, // Set to true for autoplay loop
     
     // Discord
-    discordInviteLink: "https://discord.gg/your-invite-code", // Replace with your Discord invite link
+    discordInviteLink: "https://discord.gg/eY3U6YBM3Z", // Replace with your Discord invite link
     
     // Roblox
     robloxGameLink: "https://www.roblox.com/games/your-game-id", // Replace with your Roblox game link
