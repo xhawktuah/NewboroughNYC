@@ -250,12 +250,22 @@ document.addEventListener('keydown', (e) => {
 
 function preloadImages() {
     const logo = document.getElementById('gamelogo');
-    if (logo && logo.src) {
+    if (logo && logo.src && logo.src !== 'src/logo.png') {
         const img = new Image();
         img.src = logo.src;
+        img.onerror = () => {
+            console.warn('Failed to load logo from: ' + logo.src);
+        };
     }
 }
 
 window.addEventListener('load', preloadImages);
 
+// ============================================
+// LOGGING
+// ============================================
+
 console.log('NewBoroughs NYC - Landing Page Loaded Successfully');
+console.log('Assets folder: src/');
+console.log('- Logo: src/logo.png');
+console.log('- Music: src/music.mp3');

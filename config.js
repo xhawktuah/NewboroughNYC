@@ -7,10 +7,10 @@ const CONFIG = {
     pageTitle: "NewBoroughs NYC - Ultimate New York Roleplay",
     
     // Logo
-    logoUrl: "https://via.placeholder.com/200/0d1b2a/00d4ff?text=NB+NYC", // Replace with your logo URL
+    logoUrl: "src/logo.png", // Replace with your logo file path
     
     // Music Player
-    musicUrl: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // Replace with your music URL
+    musicUrl: "src/music.mp3", // Replace with your music file path
     songTitle: "NewBoroughs NYC Theme",
     autoplay: false, // Set to true for autoplay
     loop: false, // Set to true for autoplay loop
