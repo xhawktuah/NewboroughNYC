@@ -1,0 +1,53 @@
+# Asset Placeholder Files
+
+This folder contains placeholder locations for your media assets.
+
+## Required Files
+
+### `logo.png`
+- **Purpose**: Game/brand logo displayed at the top of the page
+- **Format**: PNG, JPG, or WebP
+- **Recommended Size**: 180x180px or larger
+- **Aspect Ratio**: Square (1:1)
+- **Background**: Transparent recommended
+
+### `music.mp3`
+- **Purpose**: Background music for the audio player
+- **Format**: MP3 (or OGG, WAV, FLAC for alternatives)
+- **Quality**: 128-320 kbps
+- **Recommended**: MP3 for best browser compatibility
+
+## How to Add Your Files
+
+1. Replace the placeholder paths with your actual media files
+2. Ensure files are named exactly as configured in `config.js`:
+   - Default: `logo.png` and `music.mp3`
+3. Update file paths in `config.js` if you use different names:
+
+```javascript
+logoUrl: "src/your-logo.png",
+musicUrl: "src/your-music.mp3"
+```
+
+## Supported Formats
+
+### Images
+- PNG (recommended for transparency)
+- JPG
+- WebP
+- GIF (animated GIFs supported)
+
+### Audio
+- MP3 (best browser compatibility)
+- OGG (Vorbis codec)
+- WAV
+- FLAC
+- M4A (AAC codec)
+
+## Tips
+
+- Keep file sizes reasonable for fast loading:
+  - Logo: < 500 KB
+  - Music: < 5 MB (depends on length and quality)
+- Use optimized versions for web
+- Test on different browsers for compatibility
