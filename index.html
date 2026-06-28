@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewBoroughs NYC - Ultimate New York Roleplay</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="background">
+        <div class="skyline"></div>
+        <div class="particles-container"></div>
+        <div class="overlay"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo-container">
+            <img src="logo-src" alt="NewBoroughs NYC Logo" class="logo" id="gamelogo">
+        </div>
+
+        <!-- Title -->
+        <h1 class="title">NewBoroughs NYC</h1>
+
+        <!-- Audio Player -->
+        <div class="audio-player">
+            <button class="play-btn" id="playBtn">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="player-info">
+                <span class="song-title" id="songTitle">Now Playing</span>
+                <div class="visualizer">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+            </div>
+            <div class="volume-control">
+                <i class="fas fa-volume-low"></i>
+                <input type="range" min="0" max="100" value="70" id="volumeSlider" class="volume-slider">
+                <i class="fas fa-volume-high"></i>
+            </div>
+            <button class="loop-btn" id="loopBtn" title="Toggle Loop">
+                <i class="fas fa-repeat"></i>
+            </button>
+            <audio id="audioPlayer"></audio>
+        </div>
+
+        <!-- Introduction Text -->
+        <p class="intro-text">
+            Welcome to NewBoroughs NYC, where every street tells a story. Build your legacy, earn your reputation, 
+            and experience the ultimate New York roleplay adventure. Explore bustling boroughs, own businesses, 
+            customize your character, and create unforgettable moments with friends.
+        </p>
+
+        <!-- Action Buttons -->
+        <div class="buttons-container">
+            <a href="discord-link" class="btn btn-discord" id="discordBtn">
+                <i class="fab fa-discord"></i>
+                <span>Join Discord</span>
+            </a>
+            <a href="roblox-link" class="btn btn-roblox" id="robloxBtn">
+                <i class="fab fa-roblox" style="background: linear-gradient(135deg, #000, #fff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;"></i>
+                <span>Play on Roblox</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; NewBoroughs NYC — All Rights Reserved</p>
+    </footer>
+
+    <!-- Configuration Script -->
+    <script src="config.js"></script>
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>

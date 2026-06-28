@@ -1,0 +1,679 @@
+/* ============================================
+   NEWBOROUGHS NYC - PREMIUM LANDING PAGE
+   Modern NYC Nightlife Inspired Design
+   ============================================ */
+
+:root {
+    --primary-dark: #0d1b2a;
+    --secondary-dark: #1a2f4a;
+    --accent-blue: #00d4ff;
+    --accent-gold: #d4af37;
+    --text-white: #ffffff;
+    --text-light: #e0e0e0;
+    --glow-blue: 0 0 20px rgba(0, 212, 255, 0.6);
+    --glow-gold: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--primary-dark);
+    color: var(--text-white);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+/* ============================================
+   BACKGROUND & PARTICLES
+   ============================================ */
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.skyline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(
+        to top,
+        rgba(10, 30, 50, 0.8),
+        rgba(13, 27, 42, 0.6)
+    );
+    background-image: 
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><defs><linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%%" style="stop-color:rgba(0,212,255,0.3);stop-opacity:1" /><stop offset="100%%" style="stop-color:rgba(0,212,255,0);stop-opacity:1" /></linearGradient></defs><rect x="50" y="200" width="80" height="200" fill="url(%23grad)" /><rect x="180" y="150" width="100" height="250" fill="url(%23grad)" /><rect x="350" y="180" width="90" height="220" fill="url(%23grad)" /><rect x="500" y="100" width="110" height="300" fill="url(%23grad)" /><rect x="680" y="160" width="95" height="240" fill="url(%23grad)" /><rect x="830" y="140" width="120" height="260" fill="url(%23grad)" /><rect x="1020" y="170" width="85" height="230" fill="url(%23grad)" /></svg>');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.6;
+    animation: skylineFloat 20s ease-in-out infinite;
+}
+
+@keyframes skylineFloat {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        circle at 50% 50%,
+        rgba(0, 212, 255, 0.05),
+        rgba(13, 27, 42, 0.8)
+    );
+    pointer-events: none;
+}
+
+.particles-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.8), transparent);
+    border-radius: 50%;
+    pointer-events: none;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        opacity: 0;
+        transform: translateY(100vh) translateX(0);
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-100vh) translateX(100px);
+    }
+}
+
+/* ============================================
+   MAIN CONTAINER
+   ============================================ */
+
+.container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+
+.logo-container {
+    margin-bottom: 40px;
+    animation: logoEnter 1s ease-out forwards;
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+    filter: drop-shadow(var(--glow-blue));
+    animation: logoPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoEnter {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes logoPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+/* ============================================
+   TITLE
+   ============================================ */
+
+.title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    background: linear-gradient(
+        135deg,
+        var(--accent-blue),
+        var(--text-white),
+        var(--accent-gold)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+    animation: titleSlide 1s ease-out forwards;
+    filter: drop-shadow(var(--glow-blue));
+}
+
+@keyframes titleSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   AUDIO PLAYER
+   ============================================ */
+
+.audio-player {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(26, 47, 74, 0.6);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 50px;
+    padding: 15px 25px;
+    margin-bottom: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+    animation: playerEnter 1s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+@keyframes playerEnter {
+    to {
+        opacity: 1;
+    }
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-blue), #00a8cc);
+    border: none;
+    color: var(--text-white);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: var(--glow-blue);
+}
+
+.play-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+}
+
+.play-btn:active {
+    transform: scale(0.95);
+}
+
+.player-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 150px;
+}
+
+.song-title {
+    font-size: 14px;
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.visualizer {
+    display: flex;
+    gap: 4px;
+    height: 20px;
+    align-items: flex-end;
+}
+
+.visualizer .bar {
+    width: 3px;
+    height: 8px;
+    background: var(--accent-blue);
+    border-radius: 2px;
+    animation: visualize 0.6s ease-in-out infinite;
+}
+
+.visualizer .bar:nth-child(1) { animation-delay: 0s; }
+.visualizer .bar:nth-child(2) { animation-delay: 0.1s; }
+.visualizer .bar:nth-child(3) { animation-delay: 0.2s; }
+.visualizer .bar:nth-child(4) { animation-delay: 0.1s; }
+.visualizer .bar:nth-child(5) { animation-delay: 0s; }
+
+@keyframes visualize {
+    0%, 100% { height: 8px; }
+    50% { height: 16px; }
+}
+
+.audio-player.playing .visualizer .bar {
+    animation: visualize 0.4s ease-in-out infinite;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.volume-control i {
+    color: var(--accent-blue);
+    font-size: 14px;
+}
+
+.volume-slider {
+    width: 100px;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(0, 212, 255, 0.2);
+    outline: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    cursor: pointer;
+    box-shadow: var(--glow-blue);
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--accent-blue);
+    cursor: pointer;
+    border: none;
+    box-shadow: var(--glow-blue);
+}
+
+.loop-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    color: var(--accent-blue);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 12px;
+}
+
+.loop-btn:hover {
+    background: rgba(0, 212, 255, 0.1);
+    box-shadow: var(--glow-blue);
+}
+
+.loop-btn.active {
+    background: var(--accent-blue);
+    color: var(--primary-dark);
+    box-shadow: var(--glow-blue);
+}
+
+/* ============================================
+   INTRO TEXT
+   ============================================ */
+
+.intro-text {
+    font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+    color: var(--text-light);
+    max-width: 700px;
+    line-height: 1.8;
+    margin-bottom: 50px;
+    animation: textFade 1s ease-out 0.3s forwards;
+    opacity: 0;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes textFade {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   BUTTONS CONTAINER
+   ============================================ */
+
+.buttons-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    animation: buttonsEnter 1s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+@keyframes buttonsEnter {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn i {
+    font-size: 1.3rem;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s ease;
+    z-index: 0;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn-discord {
+    background: linear-gradient(135deg, #5865f2, #4752c4);
+    color: var(--text-white);
+    border-color: #5865f2;
+}
+
+.btn-discord:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(88, 101, 242, 0.4), var(--glow-blue);
+    border-color: var(--accent-blue);
+}
+
+.btn-discord:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+.btn-roblox {
+    background: linear-gradient(135deg, var(--accent-blue), #00a8cc);
+    color: var(--text-white);
+    border-color: var(--accent-blue);
+}
+
+.btn-roblox:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 212, 255, 0.4);
+    border-color: var(--accent-gold);
+}
+
+.btn-roblox:active {
+    transform: translateY(-1px) scale(1.02);
+}
+
+/* Premium shine effect for Roblox button */
+.btn-roblox::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.footer {
+    position: relative;
+    z-index: 1;
+    padding: 30px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(0, 212, 255, 0.1);
+    color: var(--text-light);
+    font-size: 0.95rem;
+    animation: footerEnter 1s ease-out 0.5s forwards;
+    opacity: 0;
+}
+
+@keyframes footerEnter {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    .container {
+        padding: 30px 15px;
+    }
+
+    .logo {
+        width: 140px;
+        height: 140px;
+    }
+
+    .title {
+        margin-bottom: 25px;
+    }
+
+    .audio-player {
+        width: 100%;
+        margin-bottom: 30px;
+        gap: 15px;
+        padding: 12px 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .player-info {
+        order: 2;
+        width: 100%;
+        align-items: center;
+        min-width: auto;
+    }
+
+    .play-btn {
+        order: 1;
+    }
+
+    .volume-control {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .volume-slider {
+        width: 150px;
+    }
+
+    .loop-btn {
+        order: 4;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+        margin-bottom: 40px;
+        max-width: 90%;
+    }
+
+    .buttons-container {
+        gap: 20px;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .footer {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .title {
+        font-size: 1.8rem;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
+    .audio-player {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .volume-slider {
+        width: 120px;
+    }
+
+    .intro-text {
+        font-size: 0.9rem;
+        margin-bottom: 30px;
+    }
+
+    .buttons-container {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        padding: 15px 30px;
+        font-size: 0.95rem;
+    }
+
+    .btn i {
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ============================================
+   FOCUS STYLES
+   ============================================ */
+
+.btn:focus,
+.play-btn:focus,
+.loop-btn:focus,
+.volume-slider:focus {
+    outline: 2px solid var(--accent-blue);
+    outline-offset: 2px;
+}
